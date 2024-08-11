@@ -1,11 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.aroslabs.livewallpaper"
+    package="com.aroslabs.livewallpaperengine"
     android:versionCode="1"
     android:versionName="1.0">
 
     <uses-sdk
-        android:minSdkVersion="7"
-        android:targetSdkVersion="7"/>
+        android:minSdkVersion="7"/>
 
     <uses-feature
         android:name="android.software.live_wallpaper"
@@ -26,8 +25,9 @@
         android:theme="@style/AppTheme">
 
         <service
-            android:name="com.aroslabs.livewallpaper.LiveWallpaperService"
+            android:name=".LiveWallpaperService"
             android:enabled="true"
+            android:exported="true"
             android:label="@string/description"
             android:permission="android.permission.BIND_WALLPAPER">
             <intent-filter android:priority="1" >
@@ -36,9 +36,9 @@
             <meta-data
                 android:name="android.service.wallpaper"
                 android:resource="@xml/wallpaper"
+
                 />
         </service>
-
     </application>
 
 </manifest>
